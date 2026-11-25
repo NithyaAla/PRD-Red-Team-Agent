@@ -12,7 +12,7 @@ An AI product management portfolio project: problem framing, agent design, evalu
 
 ---
 
-## TL;DR
+## Summary
 
 | | |
 |---|---|
