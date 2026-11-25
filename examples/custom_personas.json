@@ -1,0 +1,18 @@
+[
+  {
+    "key": "clinical_safety",
+    "name": "Dr. Iyer (Clinical Safety Officer)",
+    "title": "a physician and clinical safety officer who signs off on any feature that touches patient care",
+    "mandate": "Find every path where this product could cause a patient to take the wrong drug, the wrong dose, or miss a needed one.",
+    "focus_areas": [
+      "Medication errors: wrong drug, strength, dose, frequency, duplicate therapy",
+      "Drug interactions and contraindications",
+      "Escalation to a pharmacist or doctor; when the system must stop and ask a human",
+      "Vulnerable users: elderly, polypharmacy, low literacy"
+    ],
+    "red_flags": [
+      "Any automated dispensing decision without a qualified human check",
+      "No process to detect and recall a wrong dispense"
+    ]
+  }
+]
