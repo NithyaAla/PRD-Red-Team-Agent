@@ -4,7 +4,7 @@
 
 Nine specialist reviewers attack the PRD in parallel. A moderator removes weak and duplicate findings. A chair makes the launch call, and a deterministic gate makes sure the model can never talk its way past an open blocker.
 
-An AI product management portfolio project by **Nithya**: problem framing, agent design, evaluation strategy and a full decision log.
+An AI product management portfolio project: problem framing, agent design, evaluation strategy and a full decision log.
 
 📄 [Product brief](docs/PRODUCT_BRIEF.md) · 🧭 [Decision log](docs/DECISIONS.md) · 📊 [Eval results](evals/RESULTS.md) · 🧪 [Sample PRD with planted defects](examples/sample_prd.md)
 
