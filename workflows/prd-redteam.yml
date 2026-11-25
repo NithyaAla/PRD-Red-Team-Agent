@@ -1,0 +1,26 @@
+# Red-team any PRD changed in a pull request. Fails the check on NO-GO.
+name: PRD red team
+on:
+  pull_request:
+    paths: ["docs/prd/**.md"]
+jobs:
+  redteam:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -e .
+      - name: Review changed PRDs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          status=0
+          for f in $(git diff --name-only origin/${{ github.base_ref }}...HEAD -- 'docs/prd/*.md'); do
+            redteam review "$f" --out reports --fail-on-nogo || status=$?
+          done
+          exit $status
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: redteam-reports, path: reports/ }
