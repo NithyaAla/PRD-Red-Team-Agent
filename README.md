@@ -82,26 +82,25 @@ For every PRD, a report (Markdown, standalone HTML, or JSON) containing:
 
 ```mermaid
 flowchart LR
-    A[PRD<br/>.md .pdf .docx] --> B[Hygiene linter<br/>(code)]
-    A --> C[Understand product<br/>domain, data, geos, regs]
-    C --> D{Select<br/>reviewers}
-    D --> E1[Staff Eng]
-    D --> E2[Security]
-    D --> E3[Privacy]
-    D --> E4[Compliance]
-    D --> E5[SRE]
-    D --> E6[QA]
-    D --> E7[AI/ML<br/>if AI used]
-    D --> E8[UX & a11y]
-    D --> E9[GTM/Finance]
-    E1 & E2 & E3 & E4 & E5 & E6 & E7 & E8 & E9 --> F[Verify quotes<br/>(code)]
-    F --> G[Moderator<br/>judge + dedupe]
-    G --> H[Verdict chair]
+    A["PRD<br/>.md .pdf .docx"] --> B["Hygiene linter<br/>(code)"]
+    A --> C["Understand product<br/>domain, data, geos, regs"]
+    C --> D{"Select<br/>reviewers"}
+    D --> E1["Staff Eng"]
+    D --> E2["Security"]
+    D --> E3["Privacy"]
+    D --> E4["Compliance"]
+    D --> E5["SRE"]
+    D --> E6["QA"]
+    D --> E7["AI/ML<br/>if AI used"]
+    D --> E8["UX & a11y"]
+    D --> E9["GTM/Finance"]
+    E1 & E2 & E3 & E4 & E5 & E6 & E7 & E8 & E9 --> F["Verify quotes<br/>(code)"]
+    F --> G["Moderator<br/>judge + dedupe"]
+    G --> H["Verdict chair"]
     B --> H
-    H --> I[Launch gate<br/>(code)]
-    I --> J[Report<br/>MD / HTML / JSON]
+    H --> I["Launch gate<br/>(code)"]
+    I --> J["Report<br/>MD / HTML / JSON"]
 ```
-
 | Stage | What it does | Model or code? |
 |---|---|---|
 | Hygiene linter | Missing sections (rollback, metrics, security), vague words, metrics without numbers, sensitive data with no privacy section, AI with no eval plan | Code |
