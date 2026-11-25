@@ -1,0 +1,21 @@
+{
+  "prd": "examples/sample_prd.md",
+  "description": "Ground-truth defects deliberately planted in the sample PRD. Used to measure the agent's recall.",
+  "defects": [
+    {"id": "D01", "severity": "blocker", "lane": "compliance_legal", "defect": "Schedule H/H1 drugs auto-dispensed from an AI-read prescription with no registered pharmacist verification."},
+    {"id": "D02", "severity": "blocker", "lane": "ai_ml", "defect": "LLM misreading a handwritten prescription (drug, strength or dose) directly triggers an order: no confidence threshold, no human review, patient-safety risk."},
+    {"id": "D03", "severity": "blocker", "lane": "privacy", "defect": "Prescription images and health data stored indefinitely and reused for model improvement and marketing without specific consent."},
+    {"id": "D04", "severity": "high", "lane": "privacy", "defect": "Health data sent to a third-party LLM API (possibly cross-border) with no processor agreement, retention or no-training terms stated."},
+    {"id": "D05", "severity": "blocker", "lane": "compliance_legal", "defect": "Aadhaar number collected over WhatsApp and stored in the user profile; restricted use and storage rules for Aadhaar."},
+    {"id": "D06", "severity": "high", "lane": "security", "defect": "Phone number alone is the identity (FR7): SIM swap, number recycling or shared phones allow account takeover and access to health data and autopay."},
+    {"id": "D07", "severity": "high", "lane": "compliance_legal", "defect": "UPI Autopay recurring debits with no pre-debit notification or per-order confirmation; amount can vary up to Rs 15,000."},
+    {"id": "D08", "severity": "high", "lane": "sre", "defect": "Big-bang launch to all 2M users with no feature flag, staged rollout, kill switch or rollback plan."},
+    {"id": "D09", "severity": "high", "lane": "staff_engineer", "defect": "Critical dependency (inventory availability API) is TBD and 'will be ready', and the timeline of ~4 weeks with 3 engineers is unrealistic."},
+    {"id": "D10", "severity": "medium", "lane": "business", "defect": "Success metrics are unmeasurable: no baseline, target, timeframe or guardrail metrics."},
+    {"id": "D11", "severity": "medium", "lane": "qa", "defect": "Vague, untestable NFRs and accuracy bar ('fast', 'scalable', 'secure', 'real-time', 'accuracy should be high')."},
+    {"id": "D12", "severity": "high", "lane": "ux_accessibility", "defect": "Target users are elderly Indian chronic patients but v1 is English only; no accessibility or confirmation step before automatic orders."},
+    {"id": "D13", "severity": "medium", "lane": "staff_engineer", "defect": "Refill date formula ignores dose changes, partial deliveries, discontinued drugs, prescription expiry and multiple prescriptions."},
+    {"id": "D14", "severity": "medium", "lane": "security", "defect": "Caregivers can add up to 5 family members and their prescriptions with no proof of consent or relationship."},
+    {"id": "D15", "severity": "medium", "lane": "sre", "defect": "No monitoring, alerting or fallback when the WhatsApp BSP or LLM API is down or rate-limited; no capacity or cost analysis."}
+  ]
+}
