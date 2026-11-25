@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "prd-redteam"
+version = "0.1.0"
+description = "A multi-persona AI agent that red-teams a PRD before launch."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "anthropic>=0.40",
+  "pydantic>=2.6",
+  "rich>=13",
+  "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+ui = ["streamlit>=1.35"]
+docs = ["pypdf>=4", "python-docx>=1.1"]
+dev = ["pytest>=8"]
+
+[project.scripts]
+redteam = "redteam.cli:main"
+
+[tool.setuptools]
+packages = ["redteam"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
